@@ -1,0 +1,94 @@
+{
+  "name": "01_action_node_EditFields",
+  "nodes": [
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        0,
+        0
+      ],
+      "id": "da56a05f-8315-4420-aac2-96e1873f2aea",
+      "name": "When clicking ‘Execute workflow’"
+    },
+    {
+      "parameters": {
+        "url": "https://zenquotes.io/api/random",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        208,
+        0
+      ],
+      "id": "8227acf0-5300-49e5-9e21-f29144a025a4",
+      "name": "HTTP Request"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "536daa39-332e-4d6f-abbc-8eb9aeb0d72b",
+              "name": "quote",
+              "value": "={{ $json.q }}",
+              "type": "string"
+            },
+            {
+              "id": "1cd50332-11b5-431b-bfbd-1be083e395d7",
+              "name": "help",
+              "value": "={{ $json.h }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        416,
+        0
+      ],
+      "id": "402fe8db-f256-4ce6-ac50-20bb643d907a",
+      "name": "Edit Fields"
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "When clicking ‘Execute workflow’": {
+      "main": [
+        [
+          {
+            "node": "HTTP Request",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "HTTP Request": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "versionId": "b3d9a39d-eab8-4ac7-aa66-0ffa78e5089d",
+  "meta": {
+    "instanceId": "84c4515d572316c381c815ca23f11d8a4664fd2fca427d77968ac06c078055c4"
+  },
+  "id": "vtbq2peRlMtWJTbV",
+  "tags": []
+}
