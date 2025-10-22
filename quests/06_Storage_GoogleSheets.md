@@ -9,6 +9,7 @@
 \n\n{\"Summary\": (350자 이내 요약 작성, 텍스트), \"One-line review\": (한 줄 평 작성, 텍스트)}\n\n
 
 [기사 전문]
+{{ $('HTTP Request').item.json.data }}
 
 ```
 
