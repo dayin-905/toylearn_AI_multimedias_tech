@@ -169,13 +169,13 @@
       "parameters": {
         "content": "## 답변 (양 적은 것)\n",
         "height": 176,
-        "width": 256,
+        "width": 272,
         "color": 6
       },
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
       "position": [
-        416,
+        400,
         -944
       ],
       "id": "1dd59851-5dda-4f76-aa94-99b359b2231a",
@@ -191,7 +191,7 @@
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
       "position": [
-        416,
+        400,
         -736
       ],
       "id": "0792aef0-2fb7-4413-859a-b7d394458ee6",
@@ -247,34 +247,17 @@
     },
     {
       "parameters": {
-        "content": "## 메일 삭제를 왜 하는 것인지..,?",
-        "width": 448
+        "content": "## 답변 후 삭제",
+        "width": 544
       },
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
       "position": [
-        720,
+        688,
         -944
       ],
       "id": "66728683-4ba0-4d4d-a556-394ad3becedd",
       "name": "Sticky Note3"
-    },
-    {
-      "parameters": {
-        "rule": {
-          "interval": [
-            {}
-          ]
-        }
-      },
-      "type": "n8n-nodes-base.scheduleTrigger",
-      "typeVersion": 1.2,
-      "position": [
-        -992,
-        -784
-      ],
-      "id": "2e6c6274-033d-449b-bb14-21816b3e3646",
-      "name": "Schedule Trigger"
     },
     {
       "parameters": {
@@ -404,6 +387,17 @@
       ],
       "id": "b46455f3-8cde-4844-8b17-3542d02cd5ca",
       "name": "Edit Fields"
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        -960,
+        -784
+      ],
+      "id": "5ee7737b-2f29-4350-9951-90adb005f39c",
+      "name": "When clicking ‘Execute workflow’"
     }
   ],
   "pinData": {},
@@ -477,17 +471,6 @@
         ]
       ]
     },
-    "Schedule Trigger": {
-      "main": [
-        [
-          {
-            "node": "Get row(s) in sheet",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
     "Sales": {
       "main": [
         [
@@ -542,13 +525,24 @@
           }
         ]
       ]
+    },
+    "When clicking ‘Execute workflow’": {
+      "main": [
+        [
+          {
+            "node": "Get row(s) in sheet",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
     }
   },
   "active": false,
   "settings": {
     "executionOrder": "v1"
   },
-  "versionId": "dbb065ce-89bc-4789-a549-f7fa2aff00fa",
+  "versionId": "035995cb-e6e4-48ec-ba4a-e9b68cf31e7b",
   "meta": {
     "templateCredsSetupCompleted": true,
     "instanceId": "29f391ad7e31c040d0900e4485c9e8670023e2542262ca1620c807d1a6c9fce6"
