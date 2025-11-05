@@ -261,15 +261,15 @@
     },
     {
       "parameters": {
-        "content": "## 11월 5일 Toy Projects \n- 도시 이름 입력 시 날씨 정보를 수집\n + Current, Daily Forecast\n- 수집된 기록 sheets\n + 컬럼 : 도시명, 좌표, 확인 일시, Current, Daily Forecast\n- 공유 : n8n.json, 기록된 sheet",
-        "height": 208,
-        "width": 400
+        "content": "## 11월 5일 Toy Projects \n- 도시 이름 입력 시 날씨 정보를 수집\n + Current, Daily Forecast\n- 수집된 기록 sheets\n + 컬럼 : 도시명, 좌표, 확인 일시, Current, Daily Forecast\n- 공유 : n8n.json, 기록된 sheet\n\n링크\ncurrent : https://openweathermap.org/current\n5 day  weather : https://openweathermap.org/forecast5",
+        "height": 256,
+        "width": 432
       },
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
       "position": [
         -560,
-        -288
+        -336
       ],
       "id": "900bfd08-360a-4e38-be6a-65df0a119d71",
       "name": "Sticky Note"
@@ -337,7 +337,7 @@
   "settings": {
     "executionOrder": "v1"
   },
-  "versionId": "686e36f2-9532-4ab3-b1f5-2822706c5798",
+  "versionId": "be7ec0fc-9d2b-4af1-8deb-0ef654e12343",
   "meta": {
     "templateCredsSetupCompleted": true,
     "instanceId": "7b130847b0bfd2376924201721c611d57889c5a27c3cf9a7309c3489cc939e2e"
