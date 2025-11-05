@@ -3,37 +3,6 @@
   "nodes": [
     {
       "parameters": {
-        "url": "http://api.openweathermap.org/geo/1.0/direct",
-        "sendQuery": true,
-        "queryParameters": {
-          "parameters": [
-            {
-              "name": "q",
-              "value": "={{ $json['도시 이름'] }}"
-            },
-            {
-              "name": "limit",
-              "value": "1"
-            },
-            {
-              "name": "appid",
-              "value": "eb6e30dfca1dd25497478b0a0aa550da"
-            }
-          ]
-        },
-        "options": {}
-      },
-      "type": "n8n-nodes-base.httpRequest",
-      "typeVersion": 4.3,
-      "position": [
-        -336,
-        -64
-      ],
-      "id": "d6b78448-3af5-4cd6-a3e8-67c04f535d2f",
-      "name": "HTTP Request1"
-    },
-    {
-      "parameters": {
         "formTitle": "도시 정보 입력",
         "formDescription": "입력한 도시 날씨 정보 제공",
         "formFields": {
@@ -73,7 +42,7 @@
         "columns": {
           "mappingMode": "defineBelow",
           "value": {
-            "좌표": "={{ $('HTTP Request1').item.json.lat }}, {{ $('HTTP Request1').item.json.lon }}",
+            "좌표": "={{ $('경도 위도(수업)').item.json.lat }}, {{ $('경도 위도(수업)').item.json.lon }}",
             "도시명": "={{ $('On form submission').item.json['도시 이름'] }}",
             "확인 일시": "={{ $('On form submission').item.json.submittedAt }}",
             "Daily Forecast": "={{ $('5 day weather').item.json.list }}",
@@ -189,11 +158,11 @@
           "parameters": [
             {
               "name": "lat",
-              "value": "={{ $('HTTP Request1').item.json.lat }}"
+              "value": "={{ $('경도 위도(수업)').item.json.lat }}"
             },
             {
               "name": "lon",
-              "value": "={{ $('HTTP Request1').item.json.lon }}"
+              "value": "={{ $('경도 위도(수업)').item.json.lon }}"
             },
             {
               "name": "appid",
@@ -258,26 +227,61 @@
       ],
       "id": "754a6c12-8f0e-48c0-ba9b-736d8b92c16b",
       "name": "Edit Fields"
+    },
+    {
+      "parameters": {
+        "url": "http://api.openweathermap.org/geo/1.0/direct",
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            {
+              "name": "q",
+              "value": "={{ $json['도시 이름'] }}"
+            },
+            {
+              "name": "limit",
+              "value": "1"
+            },
+            {
+              "name": "appid",
+              "value": "eb6e30dfca1dd25497478b0a0aa550da"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.3,
+      "position": [
+        -336,
+        -64
+      ],
+      "id": "d6b78448-3af5-4cd6-a3e8-67c04f535d2f",
+      "name": "경도 위도(수업)"
+    },
+    {
+      "parameters": {
+        "content": "## 11월 5일 Toy Projects \n- 도시 이름 입력 시 날씨 정보를 수집\n + Current, Daily Forecast\n- 수집된 기록 sheets\n + 컬럼 : 도시명, 좌표, 확인 일시, Current, Daily Forecast\n- 공유 : n8n.json, 기록된 sheet",
+        "height": 208,
+        "width": 400
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        -560,
+        -288
+      ],
+      "id": "900bfd08-360a-4e38-be6a-65df0a119d71",
+      "name": "Sticky Note"
     }
   ],
   "pinData": {},
   "connections": {
-    "HTTP Request1": {
-      "main": [
-        [
-          {
-            "node": "Current Weather",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
     "On form submission": {
       "main": [
         [
           {
-            "node": "HTTP Request1",
+            "node": "경도 위도(수업)",
             "type": "main",
             "index": 0
           }
@@ -316,13 +320,24 @@
           }
         ]
       ]
+    },
+    "경도 위도(수업)": {
+      "main": [
+        [
+          {
+            "node": "Current Weather",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
     }
   },
   "active": false,
   "settings": {
     "executionOrder": "v1"
   },
-  "versionId": "23db4096-a3c3-44a1-a876-bc8974c6b149",
+  "versionId": "686e36f2-9532-4ab3-b1f5-2822706c5798",
   "meta": {
     "templateCredsSetupCompleted": true,
     "instanceId": "7b130847b0bfd2376924201721c611d57889c5a27c3cf9a7309c3489cc939e2e"
