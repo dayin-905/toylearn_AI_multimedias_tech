@@ -140,6 +140,17 @@ C:\commands
 ### 문제 2
  C:\Commands 폴더 안에 Test라는 새 폴더를 만들고, 폴더 목록을 확인하세요.
  ```
+ PS C:\commands> mkdir Test
+
+
+    디렉터리: C:\commands
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+d-----      2025-11-06   오후 5:57                Test
+
+
 PS C:\commands> cd .\Test\
 PS C:\commands\Test> ls
  ```
