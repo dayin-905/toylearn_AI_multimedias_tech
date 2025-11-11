@@ -8,8 +8,8 @@
       "type": "n8n-nodes-base.splitInBatches",
       "typeVersion": 3,
       "position": [
-        1232,
-        -32
+        1168,
+        -16
       ],
       "id": "c984f292-10ee-4fd8-8d76-e5d327127f21",
       "name": "Loop Over Items"
@@ -20,8 +20,8 @@
       "name": "Replace Me",
       "typeVersion": 1,
       "position": [
-        2560,
-        304
+        2496,
+        320
       ],
       "id": "9c68e892-c182-4102-bac7-eedffd55c80d"
     },
@@ -55,7 +55,7 @@
       "typeVersion": 1,
       "position": [
         -240,
-        -32
+        -16
       ],
       "id": "05aaebc3-e8a7-4477-a562-3d610e8ff608",
       "name": "Google Sheets Trigger",
@@ -91,8 +91,8 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.3,
       "position": [
-        1392,
-        320
+        1328,
+        336
       ],
       "id": "541fd1a7-c3ee-4b67-b389-9543641bca50",
       "name": "pcm"
@@ -106,8 +106,8 @@
       "type": "n8n-nodes-base.convertToFile",
       "typeVersion": 1.1,
       "position": [
-        1600,
-        320
+        1536,
+        336
       ],
       "id": "98858bd4-0e9d-44ee-be31-c0118c139a24",
       "name": "Convert to File"
@@ -120,8 +120,8 @@
       "type": "n8n-nodes-base.readWriteFile",
       "typeVersion": 1,
       "position": [
-        1808,
-        320
+        1744,
+        336
       ],
       "id": "f693d161-4b59-43e3-91d7-81872c3f8137",
       "name": "Read/Write Files from Disk",
@@ -132,8 +132,8 @@
       "type": "n8n-nodes-base.executeCommand",
       "typeVersion": 1,
       "position": [
-        2016,
-        320
+        1952,
+        336
       ],
       "id": "4f8ceff5-7640-449f-8029-58fb4bc1f572",
       "name": "Execute Command",
@@ -146,8 +146,8 @@
       "type": "n8n-nodes-base.readWriteFile",
       "typeVersion": 1,
       "position": [
-        2208,
-        320
+        2144,
+        336
       ],
       "id": "c229403d-de0f-4232-96f9-76181a2f46be",
       "name": "Read/Write Files from Disk1",
@@ -162,8 +162,8 @@
       "type": "n8n-nodes-base.convertToFile",
       "typeVersion": 1.1,
       "position": [
-        1600,
-        144
+        1536,
+        160
       ],
       "id": "72fd1d8c-77cb-4ecb-beb3-892280b0a1ba",
       "name": "Convert to File1"
@@ -176,8 +176,8 @@
       "type": "n8n-nodes-base.readWriteFile",
       "typeVersion": 1,
       "position": [
-        1808,
-        144
+        1744,
+        160
       ],
       "id": "b2cc8fc0-60a7-4c52-9a47-d6f48fc0d310",
       "name": "Read/Write Files from Disk2",
@@ -208,8 +208,8 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.3,
       "position": [
-        1392,
-        144
+        1328,
+        160
       ],
       "id": "533b561a-2fab-4bd9-b950-8850d1459a61",
       "name": "image"
@@ -314,7 +314,7 @@
       "type": "n8n-nodes-base.googleSheets",
       "typeVersion": 4.7,
       "position": [
-        432,
+        480,
         -272
       ],
       "id": "0121c0e9-6d00-4d5c-ba28-d44990280ee7",
@@ -347,7 +347,7 @@
       "type": "@n8n/n8n-nodes-langchain.googleGemini",
       "typeVersion": 1,
       "position": [
-        -48,
+        -32,
         -272
       ],
       "id": "6c5a7280-1019-45b3-93d0-681befbf4f0c",
@@ -364,8 +364,8 @@
       "type": "n8n-nodes-base.merge",
       "typeVersion": 3.2,
       "position": [
-        2400,
-        304
+        2336,
+        320
       ],
       "id": "c549ec99-1edc-4ebe-9dfa-bc1da8935936",
       "name": "Merge"
@@ -462,8 +462,8 @@
       "type": "n8n-nodes-base.googleSheets",
       "typeVersion": 4.7,
       "position": [
-        1456,
-        -128
+        1392,
+        -112
       ],
       "id": "3ae0369e-ea0c-49b2-baf0-f24dc77e3f24",
       "name": "Append or update row in sheet1",
@@ -497,7 +497,7 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
       "position": [
-        240,
+        288,
         -272
       ],
       "id": "6c4700ac-5560-4d94-beb9-49ed8a200206",
@@ -524,8 +524,8 @@
       "type": "@n8n/n8n-nodes-langchain.googleGemini",
       "typeVersion": 1,
       "position": [
-        -48,
-        -32
+        -32,
+        -16
       ],
       "id": "3199784e-8b84-4db1-809d-2dd3414ea01e",
       "name": "images + Narration",
@@ -553,8 +553,8 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
       "position": [
-        768,
-        -32
+        704,
+        -16
       ],
       "id": "00e52c9b-6dd5-4817-8de4-91f347da4421",
       "name": "objects"
@@ -576,8 +576,8 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
       "position": [
-        304,
-        128
+        288,
+        144
       ],
       "id": "c7ae0fda-c45d-4341-9bdc-7064b5721586",
       "name": "parsing"
@@ -590,8 +590,8 @@
       "type": "n8n-nodes-base.splitOut",
       "typeVersion": 1,
       "position": [
-        992,
-        -32
+        928,
+        -16
       ],
       "id": "f35eb4c9-a331-4a4d-911b-da1b734a38ce",
       "name": "Split Out"
@@ -599,14 +599,14 @@
     {
       "parameters": {
         "content": "### 아이템 떼어내기",
-        "height": 224,
+        "height": 176,
         "width": 160
       },
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
       "position": [
-        736,
-        -80
+        672,
+        -48
       ],
       "id": "06570d0e-44ae-433c-8a22-c06de1e02b91",
       "name": "Sticky Note"
@@ -661,8 +661,8 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
       "position": [
-        304,
-        -32
+        288,
+        -16
       ],
       "id": "69971a03-5fe2-44df-bb67-77403ebe4311",
       "name": "경로 및 변수 지정"
@@ -674,8 +674,8 @@
       "type": "n8n-nodes-base.executeCommand",
       "typeVersion": 1,
       "position": [
-        544,
-        -32
+        496,
+        -16
       ],
       "id": "3e167076-775d-41d2-b131-e80d86c0ed08",
       "name": "Execute Command - 파일 추가"
@@ -689,6 +689,22 @@
             "parts": [
               {
                 "text": "{\"image_prompts\": [{\"scene\": 1, \"description\": \"드론으로 촬영한 라플란드의 광활한 설원 위, 밤하늘을 가득 채운 오색찬란한 오로라.\", \"style\": \"압도적인 스케일, 하이퍼리얼리즘, 시네마틱 와이드 앵글, 극적인 조명\"}, {\"scene\": 2, \"description\": \"거대한 얼음 폭포로 줌인, 그 속 깊이 감춰진 신비로운 얼음 동굴과 따뜻한 김이 피어오르는 에메랄드빛 온천, 온천수에 반사된 오로라 빛.\", \"style\": \"신비롭고 몽환적인, 럭셔리 탐험, 섬세한 디테일, 빛의 대비, 시네마틱 줌 효과\"}, {\"scene\": 3, \"description\": \"얼음 동굴 속 에메랄드빛 온천에 몸을 담근 채, 머리 위로 펼쳐진 오로라를 감상하는 VVIP의 뒷모습. 옆에는 최상급 위스키와 캐시미어 로브가 놓여 있음.\", \"style\": \"극도의 편안함, 고요한 럭셔리, 포근함과 차가움의 대비, 오로라 빛의 영롱함, 클로즈업\"}], \"narration_script\": [{\"scene\": 1, \"narration\": \"3초 만에 당신의 심장을 훔칠 극강의 비주얼! 드론이 담아낸 라플란드 설원, 오색찬란 오로라가 하늘을 수놓습니다.\", \"duration\": 4}, {\"scene\": 2, \"narration\": \"카메라가 서서히 줌인, 거대한 얼음 폭포의 장엄함. 그 속, 오로라 빛 받은 에메랄드빛 비밀 온천이 영롱하게 빛납니다.\", \"duration\": 5}, {\"scene\": 3, \"narration\": \"극소수 VVIP를 위한 단 한 번의 프라이빗 스파. 자연의 위대함 속, 당신만을 위한 완벽한 평화. 이 황홀경, 당신의 버킷리스트 가장 위에 기록하세요!\", \"duration\": 5}]}"
+              }
+            ],
+            "role": "model"
+          },
+          "finishReason": "STOP",
+          "index": 0
+        }
+      }
+    ],
+    "Message a model": [
+      {
+        "json": {
+          "content": {
+            "parts": [
+              {
+                "text": "[\n  {\n    \"Subject\": \"CG아냐? 북극 '이동식 오로라 버블 돔'에서 평생 잊지 못할 밤\"\n  },\n  {\n    \"Link or Contents\": \"영상은 불가능해 보이는 장면으로 시작합니다: 광활하고 고요하며 손길 닿지 않은 설원이 에메랄드 그린과 보랏빛으로 펄스 치는 오로라의 비현실적인 빛에 물들어 있고, 그 중심에 하늘에서 떨어진 보석처럼 완벽하게 투명하고 따뜻한 유리 버블 돔이 놓여 있습니다.\\n\\n이것은 단순한 숙소가 아닙니다. 이것은 *당신만을 위한* 개인 이동식 관측소입니다. 매일 밤, 오로라 추적팀이 태양 활동과 기상 패턴을 모니터링하며, 맞춤 제작된 이 돔을 가장 깨끗하고 빛 공해 없는 장소에 전략적으로 배치하여, 일반 투어로는 꿈꿀 수 없는 360도 방해받지 않는 천상의 발레를 선사합니다.\\n\\n돔 안은 비교할 수 없는 럭셔리로 가득합니다: 푹신한 가구, 아늑한 인공 벽난로, 그리고 우주 쇼에 완벽하게 어울리는 현지 진미로 구성된 \\\"오로라 미식\\\" 경험을 준비하는 전담 셰프가 있습니다.\\n\\n하지만 진정한 마법은 따로 있습니다. 북극광에 대한 고대 이야기와 전설을 들려주는 현지 원주민 어르신과의 사적인 만남은 단순한 시각적 장관을 넘어, 현상의 영적, 문화적 연결을 선사합니다. 이 특정 어르신은 깊은 조상의 지식으로 유명하며, 좀처럼 개인 투어를 진행하지 않습니다. 이 펄스 치는 빛 아래에서 이루어지는 친밀한 스토리텔링 세션은 관람을 심오하고 잊을 수 없는 의식으로 바꿉니다.\\n\\n이것은 궁극의 버킷리스트 경험이며, 너무나 초현실적이고 깊이 개인적인 밤이라 경이로움에 대한 당신의 개념을 영원히 재정의할 것입니다. 절대적인 럭셔리와 깊은 고독 속에서 우주가 당신에게 직접 말을 거는 곳, 바로 이곳입니다.\"\n  }\n]"
               }
             ],
             "role": "model"
@@ -942,7 +958,7 @@
   "settings": {
     "executionOrder": "v1"
   },
-  "versionId": "57493c2d-f49c-4833-8349-da0027d01195",
+  "versionId": "4066d55b-f798-40ff-b98a-dab1f8ddc52a",
   "meta": {
     "templateCredsSetupCompleted": true,
     "instanceId": "7b130847b0bfd2376924201721c611d57889c5a27c3cf9a7309c3489cc939e2e"
