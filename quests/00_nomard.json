@@ -3,48 +3,6 @@
   "nodes": [
     {
       "parameters": {
-        "assignments": {
-          "assignments": [
-            {
-              "id": "b0f84f16-2cbf-419b-bc97-e3be797aebab",
-              "name": "noard_dir",
-              "value": "/home/node/nomard",
-              "type": "string"
-            },
-            {
-              "id": "dd180b43-fc65-47b1-9425-09ba4daf2925",
-              "name": "runIndex",
-              "value": "={{ $runIndex + 10}}",
-              "type": "string"
-            }
-          ]
-        },
-        "options": {}
-      },
-      "type": "n8n-nodes-base.set",
-      "typeVersion": 3.4,
-      "position": [
-        656,
-        -32
-      ],
-      "id": "69971a03-5fe2-44df-bb67-77403ebe4311",
-      "name": "Edit Fields - 경로 및 변수"
-    },
-    {
-      "parameters": {
-        "command": "=mkdir -p {{ $json.noard_dir }}"
-      },
-      "type": "n8n-nodes-base.executeCommand",
-      "typeVersion": 1,
-      "position": [
-        848,
-        -32
-      ],
-      "id": "3e167076-775d-41d2-b131-e80d86c0ed08",
-      "name": "Execute Command - 파일 추가"
-    },
-    {
-      "parameters": {
         "options": {}
       },
       "type": "n8n-nodes-base.splitInBatches",
@@ -62,7 +20,7 @@
       "name": "Replace Me",
       "typeVersion": 1,
       "position": [
-        2656,
+        2560,
         304
       ],
       "id": "9c68e892-c182-4102-bac7-eedffd55c80d"
@@ -188,7 +146,7 @@
       "type": "n8n-nodes-base.readWriteFile",
       "typeVersion": 1,
       "position": [
-        2224,
+        2208,
         320
       ],
       "id": "c229403d-de0f-4232-96f9-76181a2f46be",
@@ -255,31 +213,6 @@
       ],
       "id": "533b561a-2fab-4bd9-b950-8850d1459a61",
       "name": "image"
-    },
-    {
-      "parameters": {
-        "formTitle": "여행 주제 선정",
-        "formDescription": "인생을 바꾼 의외의 여행지 유튜브 숏츠 제작",
-        "formFields": {
-          "values": [
-            {
-              "fieldLabel": "유튜브 주제",
-              "fieldType": "textarea",
-              "placeholder": "예시) 여행용 유튜브 주제를 1가지 뽑아줘."
-            }
-          ]
-        },
-        "options": {}
-      },
-      "type": "n8n-nodes-base.formTrigger",
-      "typeVersion": 2.3,
-      "position": [
-        -240,
-        -272
-      ],
-      "id": "4448aa96-58fa-4135-af94-1013b59d646b",
-      "name": "On form submission",
-      "webhookId": "8b1bd0d8-bf24-4fad-9101-27624b665ef4"
     },
     {
       "parameters": {
@@ -431,7 +364,7 @@
       "type": "n8n-nodes-base.merge",
       "typeVersion": 3.2,
       "position": [
-        2448,
+        2400,
         304
       ],
       "id": "c549ec99-1edc-4ebe-9dfa-bc1da8935936",
@@ -609,14 +542,8 @@
           "assignments": [
             {
               "id": "ea75e95e-a15f-49c3-b53f-7fc356362a0a",
-              "name": "image_prompts",
-              "value": "={{ $json.content.parts[0].text }}",
-              "type": "object"
-            },
-            {
-              "id": "eec57950-056b-4a32-8c39-483b8f7fd2af",
-              "name": "narration_script",
-              "value": "={{ $json.content.parts[0].text }}",
+              "name": "content.parts[0].text",
+              "value": "={{ $('images + Narration').item.json.content.parts[0].text }}",
               "type": "object"
             }
           ]
@@ -626,7 +553,7 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
       "position": [
-        288,
+        768,
         -32
       ],
       "id": "00e52c9b-6dd5-4817-8de4-91f347da4421",
@@ -649,21 +576,21 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
       "position": [
-        96,
-        192
+        304,
+        128
       ],
       "id": "c7ae0fda-c45d-4341-9bdc-7064b5721586",
       "name": "parsing"
     },
     {
       "parameters": {
-        "fieldToSplitOut": "image_prompts",
+        "fieldToSplitOut": "content.parts[0].text.image_prompts, content.parts[0].text.narration_script",
         "options": {}
       },
       "type": "n8n-nodes-base.splitOut",
       "typeVersion": 1,
       "position": [
-        464,
+        992,
         -32
       ],
       "id": "f35eb4c9-a331-4a4d-911b-da1b734a38ce",
@@ -671,17 +598,87 @@
     },
     {
       "parameters": {
-        "content": "### 아이템 떼어내기.",
+        "content": "### 아이템 떼어내기",
+        "height": 224,
         "width": 160
       },
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
       "position": [
-        432,
-        -64
+        736,
+        -80
       ],
       "id": "06570d0e-44ae-433c-8a22-c06de1e02b91",
       "name": "Sticky Note"
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        -240,
+        -272
+      ],
+      "id": "56566340-7732-441c-9c27-8c3c2251412f",
+      "name": "When clicking ‘Execute workflow’"
+    },
+    {
+      "parameters": {
+        "content": "## 주제 선정",
+        "height": 240,
+        "width": 918,
+        "color": 4
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        -256,
+        -320
+      ],
+      "id": "0dce0ef0-588c-480d-aa95-024e7772c358",
+      "name": "Sticky Note1"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "b0f84f16-2cbf-419b-bc97-e3be797aebab",
+              "name": "noard_dir",
+              "value": "/home/node/nomard",
+              "type": "string"
+            },
+            {
+              "id": "dd180b43-fc65-47b1-9425-09ba4daf2925",
+              "name": "runIndex",
+              "value": "={{ $runIndex + 10}}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        304,
+        -32
+      ],
+      "id": "69971a03-5fe2-44df-bb67-77403ebe4311",
+      "name": "경로 및 변수 지정"
+    },
+    {
+      "parameters": {
+        "command": "=mkdir -p {{ $json.noard_dir }}"
+      },
+      "type": "n8n-nodes-base.executeCommand",
+      "typeVersion": 1,
+      "position": [
+        544,
+        -32
+      ],
+      "id": "3e167076-775d-41d2-b131-e80d86c0ed08",
+      "name": "Execute Command - 파일 추가"
     }
   ],
   "pinData": {
@@ -703,28 +700,6 @@
     ]
   },
   "connections": {
-    "Edit Fields - 경로 및 변수": {
-      "main": [
-        [
-          {
-            "node": "Execute Command - 파일 추가",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Execute Command - 파일 추가": {
-      "main": [
-        [
-          {
-            "node": "Loop Over Items",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
     "Loop Over Items": {
       "main": [
         [
@@ -847,17 +822,6 @@
         ]
       ]
     },
-    "On form submission": {
-      "main": [
-        [
-          {
-            "node": "Message a model",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
     "Message a model": {
       "main": [
         [
@@ -906,7 +870,7 @@
       "main": [
         [
           {
-            "node": "objects",
+            "node": "경로 및 변수 지정",
             "type": "main",
             "index": 0
           }
@@ -915,7 +879,13 @@
     },
     "objects": {
       "main": [
-        []
+        [
+          {
+            "node": "Split Out",
+            "type": "main",
+            "index": 0
+          }
+        ]
       ]
     },
     "parsing": {
@@ -927,7 +897,40 @@
       "main": [
         [
           {
-            "node": "Edit Fields - 경로 및 변수",
+            "node": "Loop Over Items",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "When clicking ‘Execute workflow’": {
+      "main": [
+        [
+          {
+            "node": "Message a model",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "경로 및 변수 지정": {
+      "main": [
+        [
+          {
+            "node": "Execute Command - 파일 추가",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Execute Command - 파일 추가": {
+      "main": [
+        [
+          {
+            "node": "objects",
             "type": "main",
             "index": 0
           }
@@ -939,7 +942,7 @@
   "settings": {
     "executionOrder": "v1"
   },
-  "versionId": "bccbb130-5ac4-4e43-ac8a-10e9a36cf539",
+  "versionId": "57493c2d-f49c-4833-8349-da0027d01195",
   "meta": {
     "templateCredsSetupCompleted": true,
     "instanceId": "7b130847b0bfd2376924201721c611d57889c5a27c3cf9a7309c3489cc939e2e"
